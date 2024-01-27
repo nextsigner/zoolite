@@ -1,0 +1,38 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Page1Form.ui.qml</file>
+        <file>Page2Form.ui.qml</file>
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>Funcs.js</file>
+        <file>Mando.qml</file>
+        <file>HostEditor.qml</file>
+        <file>Splash.qml</file>
+        <file>splash.png</file>
+        <file>android/assets/modules/ZoolMapData/nakshatras.json</file>
+        <file>android/assets/modules/ZoolMapData/sol.json</file>
+        <file>android/assets/modules/ZoolMapData/mercurio.json</file>
+        <file>android/assets/modules/ZoolMapData/marte.json</file>
+        <file>android/assets/modules/ZoolMapData/venus.json</file>
+        <file>android/assets/modules/ZoolMapData/neptuno.json</file>
+        <file>android/assets/modules/ZoolMapData/jupiter.json</file>
+        <file>android/assets/modules/ZoolMapData/lilith.json</file>
+        <file>android/assets/modules/ZoolMapData/nodo_sur.json</file>
+        <file>android/assets/modules/ZoolMapData/nodo_norte.json</file>
+        <file>android/assets/modules/ZoolMapData/urano.json</file>
+        <file>android/assets/modules/ZoolMapData/getData.sh</file>
+        <file>android/assets/modules/ZoolMapData/luna.json</file>
+        <file>android/assets/modules/ZoolMapData/saturno.json</file>
+        <file>android/assets/modules/ZoolMapData/pluton.json</file>
+        <file>android/assets/modules/ZoolMapData/numerologia_resumida.json</file>
+        <file>android/assets/modules/ZoolMapData/numerologia.json</file>
+        <file>android/assets/modules/ZoolMapData/numerologia_segunda_persona.json</file>
+        <file>android/assets/modules/ZoolMapData/numerologia_segunda_persona_fem.json</file>
+        <file>android/assets/modules/ZoolMapData/getDataNum.sh</file>
+        <file>android/assets/modules/ZoolMapData/numerologia_segunda_persona_masc.json</file>
+        <file>BotonDir.qml</file>
+        <file>Num.qml</file>
+        <file>Astro.qml</file>
+    </qresource>
+</RCC>
