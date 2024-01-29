@@ -37,7 +37,7 @@ Rectangle{
             anchors.horizontalCenter: parent.horizontalCenter
         }
         Button{
-            text: 'Calcular Numero'
+            text: 'Buscar'
             anchors.horizontalCenter: parent.horizontalCenter
             font.pixelSize: app.fs
             onClicked: {
