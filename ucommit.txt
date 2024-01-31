@@ -1,1 +1,1 @@
-Se agregan datos a Saturno.json y Mercurio.json
+Se arregla el funcionamiento de Sabianos con variables zoolMap.
