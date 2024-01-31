@@ -1,1 +1,1 @@
-Se arregla el funcionamiento de Sabianos con variables zoolMap.
+Se agragan datos a venus.json

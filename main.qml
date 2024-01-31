@@ -211,29 +211,38 @@ ApplicationWindow {
         let path='assets:/modules/ZoolMapData/'
         if(Qt.platform.os==='linux')path='./android/assets/modules/ZoolMapData/'
         let s=''
-        s+=unik.getFile(path+bodie+'.json')
+
         //ta.text=s
         let r=''
         let tit=(''+bodie+' en '+sign+'').toUpperCase()
-        r+='<h2>'+tit+'</h2><br>'
-        let json=JSON.parse(s)
-        for(var i=0;i<Object.keys(json[bodie+'_en_'+sign].manifestaciones).length; i++){
-            var keys = Object.keys(json[bodie+'_en_'+sign].manifestaciones);
-            //ta.text+=keys[i]+'\n'
-            let titItem='<h3>'+(''+keys[i]).toUpperCase().replace(/_/g, ' ')+'</h3>'
-            r+=titItem
-            let contItem=json[bodie+'_en_'+sign].manifestaciones[keys[i]]
-            r+=contItem+'<br>'
+        let json
+        s+=unik.getFile(path+bodie+'.json')
+        json=JSON.parse(s)
+        //return sign
+        if(sign!=='Elegir Signo'){
+            r+='<h2>'+tit+'</h2><br>'
+            for(var i=0;i<Object.keys(json[bodie+'_en_'+sign].manifestaciones).length; i++){
+                var keys = Object.keys(json[bodie+'_en_'+sign].manifestaciones);
+                //ta.text+=keys[i]+'\n'
+                let titItem='<h3>'+(''+keys[i]).toUpperCase().replace(/_/g, ' ')+'</h3>'
+                r+=titItem
+                let contItem=json[bodie+'_en_'+sign].manifestaciones[keys[i]]
+                r+=contItem+'<br>'
+            }
         }
-        tit=(''+bodie+' en casa '+house+'').toUpperCase()
-        r+='<h2>'+tit+'</h2><br>'
-        for(var i=0;i<Object.keys(json[bodie+'_en_casa_'+house].manifestaciones).length; i++){
-            var keys = Object.keys(json[bodie+'_en_casa_'+house].manifestaciones);
-            //ta.text+=keys[i]+'\n'
-            let titItem='<h3>'+(''+keys[i]).toUpperCase().replace(/_/g, ' ')+'</h3>'
-            r+=titItem
-            let contItem=json[bodie+'_en_casa_'+house].manifestaciones[keys[i]]
-            r+=contItem+'<br>'
+        //ta.text=house
+        //return house
+        if(house!==0){
+            tit=(''+bodie+' en casa '+house+'').toUpperCase()
+            r+='<h2>'+tit+'</h2><br>'
+            for(var i=0;i<Object.keys(json[bodie+'_en_casa_'+house].manifestaciones).length; i++){
+                keys = Object.keys(json[bodie+'_en_casa_'+house].manifestaciones);
+                //ta.text+=keys[i]+'\n'
+                let titItem='<h3>'+(''+keys[i]).toUpperCase().replace(/_/g, ' ')+'</h3>'
+                r+=titItem
+                let contItem=json[bodie+'_en_casa_'+house].manifestaciones[keys[i]]
+                r+=contItem+'<br>'
+            }
         }
         return r
     }

@@ -15,7 +15,7 @@ Rectangle{
         ComboBox{
             id: cb1
             width: r.width-app.fs
-            height: app.fs
+            height: app.fs*1.5
             model: app.aBodies
             font.pixelSize: app.fs
             anchors.horizontalCenter: parent.horizontalCenter
@@ -23,16 +23,23 @@ Rectangle{
         ComboBox{
             id: cb2
             width: r.width-app.fs
-            height: app.fs
-            model: app.signos
+            height: app.fs*1.5
+            //model: ['Ninguno', ]
             font.pixelSize: app.fs
             anchors.horizontalCenter: parent.horizontalCenter
+            Component.onCompleted: {
+                let a=['Elegir Signo']
+                for(var i=0;i < app.signos.length; i++){
+                    a.push(app.signos[i])
+                }
+                model=a
+            }
         }
         ComboBox{
             id: cb3
             width: r.width-app.fs
-            height: app.fs
-            model: ['Casa 1', 'Casa 2', 'Casa 3', 'Casa 4', 'Casa 5', 'Casa 6', 'Casa 7', 'Casa 8', 'Casa 9', 'Casa 10', 'Casa 11', 'Casa 12']
+            height: app.fs*1.5
+            model: ['Elegir Casa', 'Casa 1', 'Casa 2', 'Casa 3', 'Casa 4', 'Casa 5', 'Casa 6', 'Casa 7', 'Casa 8', 'Casa 9', 'Casa 10', 'Casa 11', 'Casa 12']
             font.pixelSize: app.fs
             anchors.horizontalCenter: parent.horizontalCenter
         }
@@ -40,6 +47,7 @@ Rectangle{
             text: 'Buscar'
             anchors.horizontalCenter: parent.horizontalCenter
             font.pixelSize: app.fs
+            visible: cb2.currentIndex>0 || cb3.currentIndex>0
             onClicked: {
                 lv.currentIndex=0
                 let tipo=0
@@ -47,8 +55,8 @@ Rectangle{
                 let resCalc=getNumNac()
                 clear()
                 let bodie=app.aBodiesFiles[cb1.currentIndex]
-                let sign=app.aSignsLowerStyle[cb2.currentIndex]
-                let house=cb3.currentIndex + 1
+                let sign=cb2.currentIndex>0?app.aSignsLowerStyle[cb2.currentIndex - 1]:'Elegir Signo'
+                let house=cb3.currentIndex
                 log(getJsonData(bodie, sign, house))
 
             }
