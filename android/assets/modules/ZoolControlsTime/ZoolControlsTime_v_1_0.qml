@@ -32,6 +32,7 @@ Rectangle {
         if(focus)controlTimeFecha.cFocus=0
     }
     onCurrentDateChanged: {
+        if(!currentDate)return
         r.anio=r.currentDate.getFullYear()
         r.mes=r.currentDate.getMonth() + 1
         r.dia=r.currentDate.getDate()

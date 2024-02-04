@@ -204,8 +204,11 @@ ApplicationWindow {
         //s+=unik.getFile('./android/assets/modules/ZoolMapData/jupiter.json')
         //ta.text=s
         //ta.text=getJsonData('jupiter')
-        let s=getJsonData('sol', 'aries', 1)
-        ta.text=s
+        //let s=getJsonData('sol', 'aries', 1)
+        //ta.text=s
+        //getHttp('https://www.astro.com/pl_s.htm')
+        log('<h3>Zoolite v1.0</h3>')
+        log('creado por Ricardo Martín Pizarro - 2024')
     }
     function getJsonData(bodie, sign, house){
         let path='assets:/modules/ZoolMapData/'
@@ -529,6 +532,20 @@ ApplicationWindow {
         return [nf, d, numArbolGen]
     }
     //<--NumPit
+
+
+    //-->Http
+    function getHttp(url)
+    {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", url, false ); // false for synchronous request
+        xmlHttp.send( null );
+        let res=xmlHttp.responseText;
+        log(res)
+    }
+    //<--Http
+
+
     //    function checkNewVersion(){
     //        let d=new Date(Date.now())
     //        let ms=d.getTime()

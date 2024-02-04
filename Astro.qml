@@ -58,6 +58,7 @@ Rectangle{
                 let sign=cb2.currentIndex>0?app.aSignsLowerStyle[cb2.currentIndex - 1]:'Elegir Signo'
                 let house=cb3.currentIndex
                 log(getJsonData(bodie, sign, house))
+                flk.contentY=0
 
             }
         }
